@@ -77,18 +77,52 @@ img {
   }
 }
 
-.nav {
+.wrapper {
   display: flex;
   justify-content: end;
-  align-items: center;
+  flex-direction: column;
   margin: 30px;
   padding: 15px;
 }
 
+.nav {
+  display: flex;
+  text-align: center;
+  justify-content: end;
+}
+
 .nav-item {
   cursor: pointer;
+  padding: 5px;
 }
 
 .nav-item:not(:last-child) {
   margin-right: 15px;
+}
+
+#burger {
+  display: none;
+}
+[for="burger"] {
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid transparent;
+}
+
+.menu-list {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  gap: 25px;
+}
+
+.menu-item {
+  padding: 10px;
+  width: 70px;
+  height: 70px;
 }
