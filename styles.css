@@ -1,0 +1,94 @@
+:root {
+  --accent-color: rgba(33, 150, 243, 1);
+  --background-color: rgba(229, 229, 229, 1);
+  --bacbackground-color-dark: rgba(47, 48, 58, 1);
+  --background-color-block: rgba(245, 244, 250, 1);
+  --black-color: rgba(33, 33, 33, 1);
+  --text-color: rgba(117, 117, 117, 1);
+  --white-color: rgba(255, 255, 255, 1);
+  --icon-color: rgba(175, 177, 184, 1);
+  --main-font: "Roboto", sans-serif;
+  --timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*geometry*/
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--white-color);
+  font-family: var(--main-font);
+  font-style: normal;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 30px;
+  padding: 15px;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 15px;
+}
