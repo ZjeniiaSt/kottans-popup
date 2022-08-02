@@ -1,12 +1,8 @@
 :root {
-  --accent-color: rgba(33, 150, 243, 1);
   --background-color: rgba(229, 229, 229, 1);
-  --bacbackground-color-dark: rgba(47, 48, 58, 1);
   --background-color-block: rgba(245, 244, 250, 1);
   --black-color: rgba(33, 33, 33, 1);
-  --text-color: rgba(117, 117, 117, 1);
   --white-color: rgba(255, 255, 255, 1);
-  --icon-color: rgba(175, 177, 184, 1);
   --main-font: "Roboto", sans-serif;
   --timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -59,24 +55,6 @@ img {
   width: 100%;
 }
 
-@media screen and (min-width: 480px) {
-  .container {
-    max-width: 480px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .container {
-    max-width: 1200px;
-  }
-}
-
 .wrapper {
   display: flex;
   justify-content: end;
@@ -99,30 +77,92 @@ img {
 .nav-item:not(:last-child) {
   margin-right: 15px;
 }
-
-#burger {
-  display: none;
-}
-[for="burger"] {
+label {
   cursor: pointer;
 }
 
+input {
+  display: none;
+}
+#popup:checked ~ .menu {
+  display: block;
+}
+
 .menu {
-  display: flex;
-  justify-content: center;
+  display: none;
+  position: absolute;
+  top: 100px;
+  right: 80px;
+  overflow-y: overlay;
+  max-width: 300px;
+  max-height: 700px;
   margin: 10px;
-  padding: 10px;
-  border: 1px solid transparent;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.menu img {
+  max-width: 60px;
+  height: 100%;
 }
 
 .menu-list {
+  padding: 30px 20px 20px 20px;
   display: grid;
-  grid-template-columns: repeat(3, 70px);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  font-size: 12px;
   gap: 25px;
 }
 
 .menu-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  cursor: pointer;
+}
+
+.menu-item:hover,
+:focus {
+  transform: scale(1.2);
+}
+
+.menu-button {
+  background-color: var(--background-color-block);
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.submenu-list {
+  display: none;
+  grid-template-rows: repeat(2, 1fr);
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+#submenu:checked ~ .submenu-list {
+  display: grid;
+}
+
+.button {
+  display: block;
   padding: 10px;
-  width: 70px;
-  height: 70px;
+  background-color: var(--background-color-block);
+  text-align: center;
+}
+
+#submenu:checked ~ .buttonfirst {
+  display: none;
+}
+
+#submenu:checked ~ .menu {
+  overflow-y: scroll;
+}
+
+.buttonsecond {
+  display: none;
+}
+
+#submenu:checked ~ .buttonsecond {
+  display: block;
 }
