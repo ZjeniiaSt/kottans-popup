@@ -98,6 +98,7 @@ input {
   max-height: 700px;
   margin: 10px;
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.15);
+  z-index: 1;
 }
 
 .menu img {
@@ -149,6 +150,11 @@ input {
   padding: 10px;
   background-color: var(--background-color-block);
   text-align: center;
+}
+
+.button:hover,
+:focus {
+  transform: scale(0.9);
 }
 
 #submenu:checked ~ .buttonfirst {
