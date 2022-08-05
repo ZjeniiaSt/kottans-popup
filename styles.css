@@ -138,7 +138,7 @@ input {
 
 .menu-item img:hover,
 .menu-item:focus-within {
-  transform: scale(1.2);
+  transform: scaleX(1.2);
 }
 
 .menu-button {
