@@ -18,17 +18,6 @@ html {
   box-sizing: border-box;
 }
 
-a:focus {
-  outline: none;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  z-index: 999;
-}
-
 body {
   background-color: var(--white-color);
   font-family: var(--main-font);
@@ -40,6 +29,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:focus {
+  outline: none;
 }
 
 ul {
@@ -81,8 +74,12 @@ nav {
   margin-right: 15px;
 }
 
-.nav-item:focus-within,
 .nav-item:hover {
+  background-color: var(--background-color-block);
+  border-radius: 15%;
+}
+
+.nav-item:focus-within {
   border-bottom: 1px solid var(--accent-color);
 }
 
@@ -95,7 +92,6 @@ input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  visibility: hidden;
 }
 
 #popup:checked ~ .menu {
@@ -141,16 +137,7 @@ input {
   transform: scaleX(1.2);
 }
 
-.menu-button {
-  background-color: var(--background-color-block);
-  padding: 20px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.button:hover,
-.buttonfirst:focus-within,
-.buttonsecond:focus-within {
+.button:hover {
   outline: none;
   color: var(--accent-color);
 }
@@ -172,7 +159,11 @@ input {
   text-align: center;
 }
 
-#submenu:checked ~ .buttonfirst {
+#submenu:focus ~ .buttonfirst span {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+#submenu:checked ~ .buttonfirst span {
   display: none;
 }
 
