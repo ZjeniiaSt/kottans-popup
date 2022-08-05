@@ -145,7 +145,7 @@ input {
 .submenu-list {
   display: none;
   grid-template-rows: repeat(2, 1fr);
-  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 #submenu:checked ~ .submenu-list {
@@ -159,7 +159,8 @@ input {
   text-align: center;
 }
 
-#submenu:focus ~ .buttonfirst span {
+#submenu:focus ~ .buttonfirst span,
+#evenmore:focus ~ .buttonsecond span {
   border-bottom: 1px solid var(--accent-color);
 }
 
@@ -169,6 +170,12 @@ input {
 
 .buttonsecond {
   display: none;
+  padding: 14px;
+}
+
+.buttonsecond:hover,
+.buttonsecond a:focus {
+  color: var(--accent-color);
 }
 
 #submenu:checked ~ .buttonsecond {
